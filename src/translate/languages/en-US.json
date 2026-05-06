@@ -22,6 +22,78 @@
     "unMarkAll": "Unmark All",
     "refresh": "Refresh"
   },
+  "sessions": {
+    "filters": {
+      "title": "Advanced filters",
+      "name": "Filter by name",
+      "namePlaceholder": "Filter by name",
+      "number": "Filter by number",
+      "numberPlaceholder": "Filter by number",
+      "status": "Filter by status",
+      "time": "Filter by time",
+      "apply": "Apply filters",
+      "clear": "Clear",
+      "statusOptions": {
+        "all": "All statuses",
+        "opened": "Opened",
+        "paused": "Paused",
+        "closed": "Closed"
+      },
+      "timeOptions": {
+        "all": "Any time",
+        "5": "Last 5 minutes",
+        "10": "Last 10 minutes",
+        "15": "Last 15 minutes",
+        "20": "Last 20 minutes",
+        "30": "Last 30 minutes",
+        "60": "Last 60 minutes",
+        ">60": "More than 60 minutes",
+        ">120": "More than 2 hours",
+        ">300": "More than 5 hours",
+        ">1440": "More than 24 hours",
+        "custom": "Custom"
+      },
+      "custom": {
+        "more": "More than",
+        "less": "Less than",
+        "valuePlaceholder": "Value",
+        "minutes": "Minutes",
+        "hours": "Hours",
+        "days": "Days"
+      }
+    },
+    "mass": {
+      "title": "Mass actions",
+      "selectAll": "Select all",
+      "selected": "{{count}} selected",
+      "newStatus": "New status",
+      "apply": "Apply to selected",
+      "noneSelected": "Select at least one session",
+      "success": "Status updated for selected sessions",
+      "error": "Failed to update status in bulk"
+    },
+    "pagination": {
+      "showing": "Showing {{shown}} of {{total}}",
+      "perPage": "Per page",
+      "showMore": "Load more",
+      "showAll": "Show all",
+      "showLess": "Show less"
+    },
+    "send": {
+      "title": "Send message",
+      "to": "To",
+      "messagePlaceholder": "Type your message",
+      "send": "Send",
+      "sending": "Sending...",
+      "empty": "Type a message before sending",
+      "success": "Message sent successfully",
+      "error": "Failed to send message"
+    },
+    "actions": {
+      "sendMessage": "Send message"
+    },
+    "empty": "No sessions found"
+  },
   "modal": {
     "delete": {
       "title": "Delete Record",
