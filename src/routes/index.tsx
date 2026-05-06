@@ -24,6 +24,7 @@ import { Sqs } from "@/pages/instance/Sqs";
 import { Typebot } from "@/pages/instance/Typebot";
 import { Webhook } from "@/pages/instance/Webhook";
 import { Websocket } from "@/pages/instance/Websocket";
+import LicenseCallback from "@/pages/Login/LicenseCallback";
 import Login from "@/pages/Login";
 import Home from "@/pages/Home";
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
         <Login />
       </PublicRoute>
     ),
+  },
+  {
+    path: "/manager/license/callback",
+    element: <LicenseCallback />,
   },
   {
     path: "/manager/",

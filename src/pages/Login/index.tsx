@@ -16,6 +16,7 @@ import { useTheme } from "@/components/theme-provider";
 import { verifyCreds } from "@/lib/queries/auth/verifyCreds";
 import { verifyGoServer } from "@/lib/queries/auth/verifyGoServer";
 import { verifyServer } from "@/lib/queries/auth/verifyServer";
+import { checkLicenseStatus, initRegister } from "@/lib/queries/license/license";
 import { DEFAULT_PROVIDER, logout, saveToken } from "@/lib/queries/token";
 
 const loginSchema = z.object({
@@ -49,8 +50,37 @@ function Login() {
     setSubmitting(true);
     setLoginError("");
     try {
+      const cleanUrl = data.serverUrl.replace(/\/+$/, "");
+
+      // 1. License gate FIRST — same flow evolution-go-manager uses.
+      // Only attempts the check on the API provider; the GO branch keeps its own flow.
+      if (data.provider === "api") {
+        try {
+          const lic = await checkLicenseStatus(cleanUrl, data.apiKey);
+          if (lic.status !== "active") {
+            const callbackUrl = `${window.location.origin}/manager/license/callback`;
+            const reg = await initRegister(callbackUrl, cleanUrl, data.apiKey);
+
+            if (!reg.register_url) {
+              const msg = reg.message || t("license.registerFailed");
+              setLoginError(msg);
+              return;
+            }
+
+            // Save credentials so the callback page knows where to call /license/activate.
+            saveToken({ url: cleanUrl, token: data.apiKey, provider: "api" });
+            window.location.href = reg.register_url;
+            return;
+          }
+        } catch (err) {
+          // If /license/* itself is unreachable, fall through to the normal login flow —
+          // older Evolution API builds without the licensing module behave this way.
+          console.warn("[license] status check skipped:", err);
+        }
+      }
+
       if (data.provider === "go") {
-        const ok = await verifyGoServer({ url: data.serverUrl, token: data.apiKey });
+        const ok = await verifyGoServer({ url: cleanUrl, token: data.apiKey });
         if (!ok) {
           logout();
           const msg = t("login.message.invalidCredentials");
@@ -58,7 +88,7 @@ function Login() {
           setLoginError(msg);
           return;
         }
-        saveToken({ url: data.serverUrl, token: data.apiKey, provider: "go" });
+        saveToken({ url: cleanUrl, token: data.apiKey, provider: "go" });
         navigate("/manager/");
         return;
       }

@@ -185,6 +185,24 @@
       "error": "Ocorreu um erro ao criar a instância"
     }
   },
+  "license": {
+    "checking": "Verificando licença...",
+    "required": "Licença necessária",
+    "redirecting": "Redirecionando para o registro de licença...",
+    "registerFailed": "Falha ao iniciar o registro de licença",
+    "callback": {
+      "title": "Ativando licença",
+      "missingCode": "Código de autorização não encontrado na URL",
+      "missingCredentials": "Credenciais não encontradas. Faça login novamente.",
+      "activating": "Aguarde enquanto ativamos sua licença.",
+      "successTitle": "Licença ativada!",
+      "successDescription": "Redirecionando...",
+      "errorTitle": "Erro na ativação",
+      "retry": "Tentar novamente",
+      "back": "Voltar ao login",
+      "genericError": "Falha ao ativar a licença"
+    }
+  },
   "login": {
     "title": "Evolution Manager",
     "description": "Por favor, faça login para continuar",

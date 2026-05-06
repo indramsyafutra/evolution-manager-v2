@@ -228,6 +228,24 @@
       "error": "An error occurred while creating the instance"
     }
   },
+  "license": {
+    "checking": "Checking license...",
+    "required": "License required",
+    "redirecting": "Redirecting to license registration...",
+    "registerFailed": "Failed to initiate license registration",
+    "callback": {
+      "title": "Activating license",
+      "missingCode": "Authorization code not found in URL",
+      "missingCredentials": "Credentials not found. Please log in again.",
+      "activating": "Please wait while we activate your license.",
+      "successTitle": "License activated!",
+      "successDescription": "Redirecting...",
+      "errorTitle": "Activation error",
+      "retry": "Try again",
+      "back": "Back to login",
+      "genericError": "Failed to activate license"
+    }
+  },
   "login": {
     "title": "Evolution Manager",
     "description": "Please enter your credentials to continue",

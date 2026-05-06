@@ -185,6 +185,24 @@
       "error": "Ocurrió un error al crear la instancia"
     }
   },
+  "license": {
+    "checking": "Verificando licencia...",
+    "required": "Licencia requerida",
+    "redirecting": "Redirigiendo al registro de licencia...",
+    "registerFailed": "Error al iniciar el registro de licencia",
+    "callback": {
+      "title": "Activando licencia",
+      "missingCode": "Código de autorización no encontrado en la URL",
+      "missingCredentials": "Credenciales no encontradas. Inicia sesión nuevamente.",
+      "activating": "Espera mientras activamos tu licencia.",
+      "successTitle": "¡Licencia activada!",
+      "successDescription": "Redirigiendo...",
+      "errorTitle": "Error en la activación",
+      "retry": "Intentar de nuevo",
+      "back": "Volver al inicio de sesión",
+      "genericError": "Error al activar la licencia"
+    }
+  },
   "login": {
     "title": "Evolution Manager",
     "description": "Por favor, inicia sesión para continuar",
