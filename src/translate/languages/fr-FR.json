@@ -184,6 +184,24 @@
       "error": "Une erreur est survenue lors de la création de l'instance"
     }
   },
+  "license": {
+    "checking": "Vérification de la licence...",
+    "required": "Licence requise",
+    "redirecting": "Redirection vers l'enregistrement de la licence...",
+    "registerFailed": "Échec du démarrage de l'enregistrement de la licence",
+    "callback": {
+      "title": "Activation de la licence",
+      "missingCode": "Code d'autorisation introuvable dans l'URL",
+      "missingCredentials": "Identifiants introuvables. Veuillez vous reconnecter.",
+      "activating": "Veuillez patienter pendant l'activation de votre licence.",
+      "successTitle": "Licence activée !",
+      "successDescription": "Redirection...",
+      "errorTitle": "Erreur d'activation",
+      "retry": "Réessayer",
+      "back": "Retour à la connexion",
+      "genericError": "Échec de l'activation de la licence"
+    }
+  },
   "login": {
     "title": "Evolution Manager",
     "description": "Veuillez vous connecter pour continuer",
